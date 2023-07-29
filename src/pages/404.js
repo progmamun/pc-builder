@@ -8,7 +8,7 @@ const NotFoundPage = () => {
   const router = useRouter();
 
   setTimeout(() => {
-    router.back();
+    router.push("/");
   }, 3000);
 
   return (
