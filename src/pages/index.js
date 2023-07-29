@@ -1,17 +1,8 @@
 import RootLayout from "@/components/Layouts/RootLayout";
 import Banner from "@/components/UI/Banner";
+import FeaturedCategories from "@/components/UI/FeaturedCategories";
 import ProductCard from "@/components/UI/ProductCard";
 import Head from "next/head";
-
-export const featuredCategories = [
-  "CPU",
-  "Motherboard",
-  "RAM",
-  "Power Supply",
-  "Storage Device",
-  "Monitor",
-  "Others",
-];
 
 export default function HomePage({ allPc }) {
   return (
@@ -28,17 +19,7 @@ export default function HomePage({ allPc }) {
       <main>
         <Banner></Banner>
         <ProductCard allPc={allPc} />
-
-        <section className="featured-categories">
-          <h2>Featured Categories</h2>
-          <div className="category-cards">
-            {featuredCategories.map((category, index) => (
-              <div className="category-card" key={index}>
-                <h3>{category}</h3>
-              </div>
-            ))}
-          </div>
-        </section>
+        <FeaturedCategories />
       </main>
     </>
   );
@@ -59,8 +40,6 @@ export const getStaticProps = async () => {
   }
 
   const randomProducts = getRandomProducts(data, 6);
-
-  console.log(data);
 
   return {
     props: {

@@ -4,7 +4,7 @@ import styles from "@/styles/Banner.module.css";
 
 function Banner() {
   return (
-    <Carousel effect="fade" autoplay>
+    <Carousel effect="fade" autoplay style={{ margin: "20px 0px" }}>
       <div className={styles.imageContainer}>
         <h3>CyberPowerPC Gamer Xtreme VR</h3>
         <Image

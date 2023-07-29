@@ -1,11 +1,36 @@
 import RootLayout from "@/components/Layouts/RootLayout";
+import Image from "next/image";
 import React from "react";
+import { Typography } from "antd";
+const { Title } = Typography;
+import { Col, Row } from "antd";
 
 const ProductDetails = ({ product }) => {
   return (
-    <div>
-      <h2 className="text-2xl">{product?.name}</h2>
-    </div>
+    <Row
+      gutter={{
+        xs: 8,
+        sm: 16,
+        md: 24,
+        lg: 32,
+      }}
+      style={{ margin: "20px 0px" }}
+    >
+      <Col className="gutter-row" span={12}>
+        <Image fill responsive src={product?.image} alt={product?.name} />
+      </Col>
+      <Col className="gutter-row" span={12}>
+        <Title level={2}>{product?.name}</Title>
+        <p>{product?.category}</p>
+        <p>{product?.status}</p>
+        <p>৳{product?.price}</p>
+        <p>{product?.description}</p>
+        <p>{product?.features}</p>
+        <p>{product?.rating}</p>
+        <p>{product?.avgRating}</p>
+        <p>{product?.reviews}</p>
+      </Col>
+    </Row>
   );
 };
 
