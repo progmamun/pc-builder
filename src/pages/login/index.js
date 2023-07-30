@@ -18,12 +18,16 @@ const LoginPage = () => {
         <div className={styles.social_icons}>
           <GoogleOutlined
             onClick={() =>
-              signIn("google", { callbackUrl: "http://localhost:3000/" })
+              signIn("google", {
+                callbackUrl: "https://pc-builder-nu.vercel.app",
+              })
             }
           />
           <GithubOutlined
             onClick={() =>
-              signIn("github", { callbackUrl: "http://localhost:3000/" })
+              signIn("github", {
+                callbackUrl: "https://pc-builder-nu.vercel.app",
+              })
             }
           />
         </div>

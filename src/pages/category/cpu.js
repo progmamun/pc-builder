@@ -54,7 +54,9 @@ cpuPage.getLayout = function getLayout(page) {
 };
 
 export const getServerSideProps = async () => {
-  const res = await fetch(`http://localhost:3000/api/products?category=CPU`);
+  const res = await fetch(
+    `https://pc-builder-nu.vercel.app/api/products?category=CPU`
+  );
   const data = await res.json();
   return {
     props: {
