@@ -52,7 +52,7 @@ export const getStaticPaths = async () => {
 
   return { paths, fallback: false };
 };
-export const getServerSideProps = async (context) => {
+export const getStaticProps = async (context) => {
   const { params } = context;
   const res = await fetch(
     `https://pc-builder-nu.vercel.app/api/products?productId=${params.productId}`
