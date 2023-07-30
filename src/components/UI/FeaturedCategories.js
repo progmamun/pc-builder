@@ -66,7 +66,15 @@ function FeaturedCategories() {
         }}
       >
         {categories.map((category, i) => (
-          <Col key={i} className="gutter-row" span={8}>
+          <Col
+            key={i}
+            className="gutter-row"
+            xs={24}
+            sm={12}
+            md={8}
+            lg={8}
+            xl={10}
+          >
             <Link href={category?.href}>
               <Card
                 style={style}
@@ -81,7 +89,7 @@ function FeaturedCategories() {
                   />
                 }
               >
-                <Meta title={category.name} />
+                <Meta title={category.title} />
 
                 <p
                   style={{

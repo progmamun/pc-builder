@@ -53,14 +53,14 @@ const NavBar = () => {
             onClick={() => handleCategorySelect(category)}
           >
             <Link
-              href={`/category/${encodeURIComponent(category.toLowerCase())}`}
+              href={`/categories/${encodeURIComponent(category.toLowerCase())}`}
             >
               {category}
             </Link>
           </Menu.Item>
         ))}
       </SubMenu>
-      <Link href="/product" style={{ color: "white" }}>
+      <Link href="/pc-builder" style={{ color: "white" }}>
         <Menu.Item key="1">PC Builder</Menu.Item>
       </Link>
 
@@ -123,7 +123,7 @@ function RootLayout({ children }) {
           textAlign: "center",
         }}
       >
-        PC Builder ©2023 Created by Al Mamun Khan.
+        PC Builder ©{new Date().getFullYear()} Created by Al Mamun Khan.
       </Footer>
     </Layout>
   );

@@ -1,0 +1,10 @@
+@media (max-width: 768px) {
+  .menuIcon {
+    display: block;
+    background: red;
+  }
+
+  /* .ant-menu-horizontal {
+    display: none;
+  } */
+}

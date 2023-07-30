@@ -34,7 +34,15 @@ const ProductCard = ({ allPc }) => {
         }}
       >
         {allPc?.map((product) => (
-          <Col key={product.id} className="gutter-row" span={8}>
+          <Col
+            key={product.id}
+            className="gutter-row"
+            xs={24}
+            sm={12}
+            md={8}
+            lg={8}
+            xl={10}
+          >
             <Card
               style={style}
               hoverable

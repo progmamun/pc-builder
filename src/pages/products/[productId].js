@@ -1,8 +1,8 @@
 import RootLayout from "@/components/Layouts/RootLayout";
 import Image from "next/image";
 import React from "react";
-import { Typography } from "antd";
-const { Title } = Typography;
+import { Space, Typography } from "antd";
+const { Title, Text } = Typography;
 import { Col, Row } from "antd";
 
 const ProductDetails = ({ product }) => {
@@ -20,15 +20,19 @@ const ProductDetails = ({ product }) => {
         <Image fill responsive src={product?.image} alt={product?.name} />
       </Col>
       <Col className="gutter-row" span={12}>
-        <Title level={2}>{product?.name}</Title>
-        <p>{product?.category}</p>
-        <p>{product?.status}</p>
-        <p>৳{product?.price}</p>
-        <p>{product?.description}</p>
-        <p>{product?.features}</p>
-        <p>{product?.rating}</p>
-        <p>{product?.avgRating}</p>
-        <p>{product?.reviews}</p>
+        <Space direction="vertical">
+          <Title level={2}>{product?.name}</Title>
+          <Text strong>Category: {product?.category}</Text>
+          <Text>
+            Status: <Text type="success">{product?.status}</Text>
+          </Text>
+          <Text strong>Price: ৳{product?.price}</Text>
+          <Text strong>Description: {product?.description}</Text>
+          <Text strong>Brand: {product?.features}</Text>
+          <Text strong>Total Ratings: {product?.rating}</Text>
+          <Text strong>Average Rating: {product?.avgRating}</Text>
+          <Text>Reviews: {product?.reviews}</Text>
+        </Space>
       </Col>
     </Row>
   );
