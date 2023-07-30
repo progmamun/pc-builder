@@ -48,7 +48,7 @@ motherBoardPage.getLayout = function getLayout(page) {
 
 export const getStaticProps = async () => {
   const res = await fetch(
-    `http://localhost:3000/api/products?category=Motherboard`
+    `https://pc-house-ecru.vercel.app/api/products?category=Motherboard`
   );
   const data = await res.json();
   return {

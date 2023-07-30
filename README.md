@@ -2,7 +2,7 @@
 
 ## Tech: NextJs(Pages route)
 
-### Live site: https://pc-builder-nu.vercel.app/
+### Live site: https://pc-house-ecru.vercel.app
 
 ---
 

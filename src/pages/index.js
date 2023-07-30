@@ -30,10 +30,16 @@ HomePage.getLayout = function getLayout(page) {
 };
 
 export const getStaticProps = async () => {
-  const res = await fetch(`http://localhost:3000/api/products`);
+  if (typeof window === "undefined") {
+    return {
+      props: {
+        allPc: [],
+      },
+    };
+  }
+  const res = await fetch(`https://pc-house-ecru.vercel.app/api/products`);
   const data = await res.json();
 
-  // Randomly select 6 products
   function getRandomProducts(data, count) {
     const shuffled = data.data.sort(() => 0.5 - Math.random());
     return shuffled.slice(0, count);

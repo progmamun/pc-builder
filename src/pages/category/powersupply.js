@@ -55,7 +55,7 @@ powersupplyPage.getLayout = function getLayout(page) {
 
 export const getServerSideProps = async () => {
   const res = await fetch(
-    `http://localhost:3000/api/products?category=Power Supply`
+    `https://pc-house-ecru.vercel.app/api/products?category=Power Supply`
   );
   const data = await res.json();
   return {
