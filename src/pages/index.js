@@ -30,13 +30,6 @@ HomePage.getLayout = function getLayout(page) {
 };
 
 export const getStaticProps = async () => {
-  if (typeof window === "undefined") {
-    return {
-      props: {
-        allPc: [],
-      },
-    };
-  }
   const res = await fetch(`https://pc-house-ecru.vercel.app/api/products`);
   const data = await res.json();
 
