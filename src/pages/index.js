@@ -8,7 +8,7 @@ export default function HomePage({ allPc }) {
   return (
     <>
       <Head>
-        <title>PC Builder | Nextjs</title>
+        <title>PC Builder | HomePage</title>
         <meta
           name="description"
           content="Build Your Custom AMD Ryzen or Intel Gaming PC from PC House PC Builder. Visit PC House shop or Order Online to get delivery Anywhere in BD."

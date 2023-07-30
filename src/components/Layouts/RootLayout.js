@@ -16,11 +16,11 @@ const NavBar = () => {
   };
 
   const categories = [
-    "CPU / Processor",
+    "CPU",
     "Motherboard",
     "RAM",
-    "Power Supply Unit",
-    "Storage Device",
+    "PowerSupply",
+    "StorageDevice",
     "Monitor",
     "Others",
   ];
@@ -40,6 +40,7 @@ const NavBar = () => {
     >
       <SubMenu
         key="3"
+        style={{ backgroundColor: "transparent" }}
         title={
           <span>
             <span>Categories</span>
@@ -49,6 +50,7 @@ const NavBar = () => {
       >
         {categories.map((category, index) => (
           <Menu.Item
+            style={{ backgroundColor: "transparent" }}
             key={index + 10}
             onClick={() => handleCategorySelect(category)}
           >
@@ -61,7 +63,9 @@ const NavBar = () => {
         ))}
       </SubMenu>
       <Link href="/pc-builder" style={{ color: "white" }}>
-        <Menu.Item key="1">PC Builder</Menu.Item>
+        <Menu.Item style={{ backgroundColor: "transparent" }} key="1">
+          PC Builder
+        </Menu.Item>
       </Link>
 
       {session?.user ? (

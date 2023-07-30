@@ -1,3 +1,5 @@
+import RootLayout from "@/components/Layouts/RootLayout";
+
 function PcBuilderPage() {
   return (
     <div>
@@ -7,3 +9,7 @@ function PcBuilderPage() {
 }
 
 export default PcBuilderPage;
+
+PcBuilderPage.getLayout = function getLayout(page) {
+  return <RootLayout>{page}</RootLayout>;
+};
