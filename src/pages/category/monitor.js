@@ -1,13 +1,20 @@
 import RootLayout from "@/components/Layouts/RootLayout";
-import CategoriesCard from "@/components/UI/CategoriesCard";
-import { Card, Row } from "antd";
+import CategoryCard from "@/components/UI/CategoryCard";
+import { Card, Col, Row } from "antd";
 import Head from "next/head";
+import Image from "next/image";
+import Link from "next/link";
+const { Meta } = Card;
 
-function motherBoardPage({ products }) {
+const style = {
+  margin: "12px 0",
+};
+
+function monitorPage({ products }) {
   return (
     <>
       <Head>
-        <title>PC Builder | Motherboard</title>
+        <title>PC Builder | Monitor</title>
         <meta
           name="description"
           content="Build Your Custom AMD Ryzen or Intel Gaming PC from PC House PC Builder. Visit PC House shop or Order Online to get delivery Anywhere in BD."
@@ -22,7 +29,7 @@ function motherBoardPage({ products }) {
           margin: "30px 0px",
         }}
       >
-        Best Motherboard.
+        Best Monitor.
       </h1>
       <Row
         gutter={{
@@ -33,22 +40,22 @@ function motherBoardPage({ products }) {
         }}
       >
         {products?.map((product) => (
-          <CategoriesCard key={product._id} product={product}></CategoriesCard>
+          <CategoryCard key={product._id} product={product}></CategoryCard>
         ))}
       </Row>
     </>
   );
 }
 
-export default motherBoardPage;
+export default monitorPage;
 
-motherBoardPage.getLayout = function getLayout(page) {
+monitorPage.getLayout = function getLayout(page) {
   return <RootLayout>{page}</RootLayout>;
 };
 
-export const getStaticProps = async () => {
+export const getServerSideProps = async () => {
   const res = await fetch(
-    `http://localhost:3000/api/products?category=Motherboard`
+    `http://localhost:3000/api/products?category=Monitor`
   );
   const data = await res.json();
   return {

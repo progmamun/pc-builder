@@ -7,3 +7,5 @@
 - npm install @reduxjs/toolkit
 - npm install react-redux
 - npm install mongodb
+- npm i sweetalert
+- npm i react-star-ratings

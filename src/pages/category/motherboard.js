@@ -1,7 +1,14 @@
 import RootLayout from "@/components/Layouts/RootLayout";
-import CategoriesCard from "@/components/UI/CategoriesCard";
-import { Card, Row } from "antd";
+import CategoryCard from "@/components/UI/CategoryCard";
+import { Card, Col, Row } from "antd";
 import Head from "next/head";
+import Image from "next/image";
+import Link from "next/link";
+const { Meta } = Card;
+
+const style = {
+  margin: "12px 0",
+};
 
 function motherBoardPage({ products }) {
   return (
@@ -33,7 +40,7 @@ function motherBoardPage({ products }) {
         }}
       >
         {products?.map((product) => (
-          <CategoriesCard key={product._id} product={product}></CategoriesCard>
+          <CategoryCard key={product._id} product={product}></CategoryCard>
         ))}
       </Row>
     </>
@@ -46,7 +53,7 @@ motherBoardPage.getLayout = function getLayout(page) {
   return <RootLayout>{page}</RootLayout>;
 };
 
-export const getStaticProps = async () => {
+export const getServerSideProps = async () => {
   const res = await fetch(
     `http://localhost:3000/api/products?category=Motherboard`
   );

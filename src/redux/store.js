@@ -1,8 +1,10 @@
 import { configureStore } from "@reduxjs/toolkit";
-import builderReducer from "@/features/builderSlice";
+import builderReducer from "@/redux/features/builderSlice";
 
-export default configureStore({
+const store = configureStore({
   reducer: {
     builder: builderReducer,
   },
 });
+
+export default store;
