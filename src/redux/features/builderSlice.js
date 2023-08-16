@@ -7,7 +7,7 @@ const initialState = {
     monitor: null,
     storage: null,
     motherboard: null,
-    powersupply: null,
+    power: null,
     others: null,
   },
   chooseSelectedCategory: "",

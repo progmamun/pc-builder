@@ -6,24 +6,25 @@
   box-sizing: border-box;
   font-family: "Oswald", sans-serif;
 }
-/*
-.headerMenu {
-  display: flex;
+
+.columnBorder {
+  margin: 5px 5px;
+  border-bottom: black 0.5px solid;
 }
-.headerMenu .menu {
-  display: flex;
-  align-items: flex-end;
+
+.mobileMenuIcon {
+  position: absolute;
+  right: 5px;
 }
 
 @media (max-width: 500px) {
-  .headerMenu {
-    display: none;
+  .pcMenu {
+    display: none !important;
   }
 }
 
 @media (min-width: 500px) {
-  .menuIcon {
+  .mobileMenuIcon {
     display: none;
   }
 }
-*/

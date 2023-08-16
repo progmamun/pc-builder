@@ -14,12 +14,45 @@ const ProductDetails = ({ product }) => {
         md: 24,
         lg: 32,
       }}
-      style={{ margin: "20px 0px" }}
+      style={{ margin: "20px 0px", minHeight: "100vh" }}
     >
-      <Col className="gutter-row" span={12}>
-        <Image fill responsive src={product?.image} alt={product?.name} />
+      <Col
+        className="gutter-row"
+        xs={{
+          span: 24,
+        }}
+        sm={{
+          span: 12,
+        }}
+        md={{
+          span: 12,
+        }}
+        lg={{
+          span: 12,
+        }}
+      >
+        <Image
+          fill
+          sizes="(min-width: 1000px) calc(50vw - 34px), calc(102.35vw - 99px)"
+          src={product?.image}
+          alt={product?.name}
+        />
       </Col>
-      <Col className="gutter-row" span={12}>
+      <Col
+        className="gutter-row"
+        xs={{
+          span: 24,
+        }}
+        sm={{
+          span: 12,
+        }}
+        md={{
+          span: 12,
+        }}
+        lg={{
+          span: 12,
+        }}
+      >
         <Space direction="vertical">
           <Title level={2}>{product?.name}</Title>
           <Text strong>Category: {product?.category}</Text>

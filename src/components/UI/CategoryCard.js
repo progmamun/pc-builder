@@ -25,7 +25,6 @@ const CategoryCard = ({ product }) => {
   const router = useRouter();
 
   const handleProductClick = () => {
-    // Redirect the user to the product detail page when the card is clicked
     router.push(`/products/${product?._id}`);
   };
 
@@ -35,25 +34,25 @@ const CategoryCard = ({ product }) => {
   );
 
   const handleAddProduct = (product) => {
-    if (product.Category === "CPU/Processor") {
+    if (product.category === "CPU") {
       dispatch(addProductToBuilder({ key: "cpu", data: product }));
       router.push("/pc-builder");
-    } else if (product?.Category === "RAM") {
+    } else if (product?.category === "RAM") {
       dispatch(addProductToBuilder({ key: "ram", data: product }));
       router.push("/pc-builder");
-    } else if (product?.Category === "Motherboard") {
+    } else if (product?.category === "Motherboard") {
       dispatch(addProductToBuilder({ key: "motherboard", data: product }));
       router.push("/pc-builder");
-    } else if (product?.Category === "Monitor") {
+    } else if (product?.category === "Monitor") {
       dispatch(addProductToBuilder({ key: "monitor", data: product }));
       router.push("/pc-builder");
-    } else if (product?.Category === "Storage Device") {
+    } else if (product?.category === "Storage Device") {
       dispatch(addProductToBuilder({ key: "storage", data: product }));
       router.push("/pc-builder");
-    } else if (product?.Category === "Power Supply Unit") {
-      dispatch(addProductToBuilder({ key: "powersupply", data: product }));
+    } else if (product?.category === "Power Supply") {
+      dispatch(addProductToBuilder({ key: "power", data: product }));
       router.push("/pc-builder");
-    } else if (product?.Category === "Others") {
+    } else if (product?.category === "Others") {
       dispatch(addProductToBuilder({ key: "others", data: product }));
       router.push("/pc-builder");
     }

@@ -1,98 +1,6 @@
-import { CaretDownOutlined } from "@ant-design/icons";
-import { Avatar, Button, Layout, Menu } from "antd";
-import { useSession, signOut } from "next-auth/react";
-import Link from "next/link";
-import { useState } from "react";
+import { Layout } from "antd";
+import NavBar from "../UI/Navbar";
 const { Header, Content, Footer } = Layout;
-const { SubMenu } = Menu;
-
-const NavBar = () => {
-  const { data: session } = useSession();
-  // console.log(session, "session data");
-  const [selectedCategory, setSelectedCategory] = useState(null);
-
-  const handleCategorySelect = (category) => {
-    setSelectedCategory(category);
-  };
-
-  const categories = [
-    "CPU",
-    "Motherboard",
-    "RAM",
-    "PowerSupply",
-    "StorageDevice",
-    "Monitor",
-    "Others",
-  ];
-
-  return (
-    <Menu
-      theme="dark"
-      mode="horizontal"
-      //   defaultSelectedKeys={["1"]}
-      style={{
-        flex: 1,
-        display: "flex",
-        justifyContent: "flex-end",
-        color: "white",
-        backgroundColor: "#404040",
-      }}
-    >
-      <SubMenu
-        key="3"
-        style={{ backgroundColor: "transparent" }}
-        title={
-          <span>
-            <span>Categories</span>
-            <CaretDownOutlined />
-          </span>
-        }
-      >
-        {categories.map((category, index) => (
-          <Menu.Item
-            style={{ backgroundColor: "transparent" }}
-            key={index + 10}
-            onClick={() => handleCategorySelect(category)}
-          >
-            <Link
-              href={`/categories/${encodeURIComponent(category.toLowerCase())}`}
-            >
-              {category}
-            </Link>
-          </Menu.Item>
-        ))}
-      </SubMenu>
-      <Link href="/pc-builder" style={{ color: "white" }}>
-        <Menu.Item style={{ backgroundColor: "transparent" }} key="1">
-          PC Builder
-        </Menu.Item>
-      </Link>
-
-      {session?.user ? (
-        <>
-          <items>
-            <Button onClick={() => signOut()}>Log out</Button>
-          </items>
-          <Avatar
-            size={{
-              xs: 24,
-              sm: 32,
-              md: 38,
-              lg: 50,
-              xl: 80,
-              xxl: 100,
-            }}
-            src={session?.user?.image}
-          />
-        </>
-      ) : (
-        <Link style={{ textDecoration: "none", color: "white" }} href="/login">
-          <items>Login</items>
-        </Link>
-      )}
-    </Menu>
-  );
-};
 
 function RootLayout({ children }) {
   return (
@@ -109,9 +17,6 @@ function RootLayout({ children }) {
           backgroundColor: "#404040",
         }}
       >
-        <Link href="/" style={{ color: "white" }}>
-          <h1>PC House</h1>
-        </Link>
         <NavBar />
       </Header>
       <Content

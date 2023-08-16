@@ -2,7 +2,7 @@ import RootLayout from "@/components/Layouts/RootLayout";
 import { useRouter } from "next/router";
 import { useDispatch, useSelector } from "react-redux";
 import swal from "sweetalert";
-import { Button, Typography, Image } from "antd";
+import { Button, Typography, Image, Row, Col } from "antd";
 import {
   chooseSelectCategory,
   clearBuilder,
@@ -16,37 +16,44 @@ function PcBuilderPage() {
   const categories = [
     {
       title: "CPU",
-      image: "https://m.media-amazon.com/images/I/71aqa3+UdoL._AC_SL1500_.jpg",
+      image:
+        "https://www.cloud.ryanscomputers.com/cdn/pc-builder-components/cpu-48x48_1686724838.png",
       href: "/category/cpu",
     },
     {
       title: "Motherboard",
-      image: "https://m.media-amazon.com/images/I/81aRnPKw8TL._AC_SL1500_.jpg",
+      image:
+        "https://www.cloud.ryanscomputers.com/cdn/pc-builder-components/2310600_1686989058.png",
       href: "/category/motherboard",
     },
     {
       title: "RAM",
-      image: "https://m.media-amazon.com/images/I/81dGOtA7GsL._AC_SL1500_.jpg",
+      image:
+        "https://www.cloud.ryanscomputers.com/cdn/pc-builder-components/RAM_1686989592.png",
       href: "/category/ram",
     },
     {
-      title: "Power Supply Unit",
-      image: "https://m.media-amazon.com/images/I/81VF8Cx339L._AC_SL1500_.jpg",
+      title: "Power Supply",
+      image:
+        "https://www.cloud.ryanscomputers.com/cdn/pc-builder-components/1470116_1686990072.png",
       href: "/category/powersupply",
     },
     {
       title: "Storage Device",
-      image: "https://m.media-amazon.com/images/I/61p7YfBpgjL._AC_SL1200_.jpg",
+      image:
+        "https://www.cloud.ryanscomputers.com/cdn/pc-builder-components/SSD-48x48_1686989668.png",
       href: "/category/storagedevice",
     },
     {
       title: "Monitor",
-      image: "https://m.media-amazon.com/images/I/41vNitCSoHL._AC_SL1000_.jpg",
+      image:
+        "https://www.cloud.ryanscomputers.com/cdn/pc-builder-components/2194087-200_1686989982.png",
       href: "/category/monitor",
     },
     {
       title: "Others",
-      image: "https://m.media-amazon.com/images/I/7156DLyUsYL._AC_SL1500_.jpg",
+      image:
+        "https://www.cloud.ryanscomputers.com/cdn/pc-builder-components/3137678_1686990169.png",
       href: "/category/others",
     },
   ];
@@ -69,8 +76,8 @@ function PcBuilderPage() {
       return builderState["motherboard"];
     } else if (category === "Storage Device") {
       return builderState["storage"];
-    } else if (category === "Power Supply Unit") {
-      return builderState["powersupply"];
+    } else if (category === "Power Supply") {
+      return builderState["power"];
     } else if (category === "Others") {
       return builderState["others"];
     }
@@ -85,11 +92,12 @@ function PcBuilderPage() {
         monitor: null,
         storage: null,
         motherboard: null,
-        powersupply: null,
+        power: null,
         others: null,
       })
     );
   };
+
   return (
     <>
       <h1
@@ -101,8 +109,8 @@ function PcBuilderPage() {
       >
         Build Your Favorite PC.
       </h1>
-      <div className="w-11/12 mx-auto pb-12 ">
-        <div className="flex items-center justify-between">
+      <div className="">
+        <div className="">
           <div>
             <Title level={3}>Choose Products</Title>
             <Text>PC Builder - Build Your Dream PC!</Text>
@@ -121,8 +129,18 @@ function PcBuilderPage() {
         </div>
         <div className="">
           {categories?.map((category, i) => (
-            <div key={i} className="">
-              <div className="">
+            <Row
+              className="columnBorder"
+              key={i}
+              align="center"
+              gutter={{
+                xs: 8,
+                sm: 16,
+                md: 24,
+                lg: 32,
+              }}
+            >
+              <Col className="gutter-row" xs={24} sm={12} md={8}>
                 <div className="">
                   <Image
                     src={category?.image}
@@ -136,21 +154,23 @@ function PcBuilderPage() {
                       : `${category?.title} (Optional)`}
                   </Title>
                 </div>
-              </div>
+              </Col>
               <div className="">
                 {showChoosedProduct(category?.title) && (
                   <div className="">
                     <Image
                       src={showChoosedProduct(category?.title)?.image}
+                      width={50}
+                      height={50}
                       className=""
                       alt={category?.title}
                     />
                     <div className="">
                       <Title level={4}>
-                        {showChoosedProduct(category?.title)?.ProductName}
+                        {showChoosedProduct(category?.title)?.name}
                       </Title>
                       <Text>
-                        Price: {showChoosedProduct(category?.title)?.Price}
+                        Price: {showChoosedProduct(category?.title)?.price}
                       </Text>
                     </div>
                   </div>
@@ -165,7 +185,7 @@ function PcBuilderPage() {
               >
                 {showChoosedProduct(category?.title) ? "Change" : "Choose"}
               </Button>
-            </div>
+            </Row>
           ))}
         </div>
       </div>

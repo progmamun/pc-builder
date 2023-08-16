@@ -12,37 +12,44 @@ function FeaturedCategories() {
   const categories = [
     {
       title: "CPU",
-      image: "https://m.media-amazon.com/images/I/71aqa3+UdoL._AC_SL1500_.jpg",
+      image:
+        "https://www.cloud.ryanscomputers.com/cdn/pc-builder-components/cpu-48x48_1686724838.png",
       href: "/categories/cpu",
     },
     {
       title: "Motherboard",
-      image: "https://m.media-amazon.com/images/I/81aRnPKw8TL._AC_SL1500_.jpg",
+      image:
+        "https://www.cloud.ryanscomputers.com/cdn/pc-builder-components/2310600_1686989058.png",
       href: "/categories/motherboard",
     },
     {
       title: "RAM",
-      image: "https://m.media-amazon.com/images/I/81dGOtA7GsL._AC_SL1500_.jpg",
+      image:
+        "https://www.cloud.ryanscomputers.com/cdn/pc-builder-components/RAM_1686989592.png",
       href: "/categories/ram",
     },
     {
       title: "Power Supply Unit",
-      image: "https://m.media-amazon.com/images/I/81VF8Cx339L._AC_SL1500_.jpg",
+      image:
+        "https://www.cloud.ryanscomputers.com/cdn/pc-builder-components/1470116_1686990072.png",
       href: "/categories/powersupply",
     },
     {
       title: "Storage Device",
-      image: "https://m.media-amazon.com/images/I/61p7YfBpgjL._AC_SL1200_.jpg",
+      image:
+        "https://www.cloud.ryanscomputers.com/cdn/pc-builder-components/SSD-48x48_1686989668.png",
       href: "/categories/storagedevice",
     },
     {
       title: "Monitor",
-      image: "https://m.media-amazon.com/images/I/41vNitCSoHL._AC_SL1000_.jpg",
+      image:
+        "https://www.cloud.ryanscomputers.com/cdn/pc-builder-components/2194087-200_1686989982.png",
       href: "/categories/monitor",
     },
     {
       title: "Others",
-      image: "https://m.media-amazon.com/images/I/7156DLyUsYL._AC_SL1500_.jpg",
+      image:
+        "https://www.cloud.ryanscomputers.com/cdn/pc-builder-components/3137678_1686990169.png",
       href: "/categories/others",
     },
   ];
