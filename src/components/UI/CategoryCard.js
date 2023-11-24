@@ -24,10 +24,6 @@ const CategoryCard = ({ product }) => {
 
   const router = useRouter();
 
-  const handleProductClick = () => {
-    router.push(`/products/${product?._id}`);
-  };
-
   const dispatch = useDispatch();
   const categoryState = useSelector(
     (state) => state.builder.chooseSelectedCategory
@@ -69,7 +65,6 @@ const CategoryCard = ({ product }) => {
       xl={10}
     >
       <Card
-        onClick={handleProductClick}
         style={style}
         hoverable
         cover={

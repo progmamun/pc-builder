@@ -2,7 +2,7 @@ import { GoogleOutlined, GithubOutlined } from "@ant-design/icons";
 import Head from "next/head";
 import { signIn } from "next-auth/react";
 import styles from "@/styles/Login.module.css";
-import { Button } from "antd";
+// import { Button } from "antd";
 import Link from "next/link";
 
 const LoginPage = () => {
@@ -13,7 +13,7 @@ const LoginPage = () => {
       </Head>
       <div className={styles.form}>
         <Link href="/" style={{ color: "white" }}>
-          <h3>LOGIN</h3>
+          <h1>LOGIN With</h1>
         </Link>
         <div className={styles.social_icons}>
           <GoogleOutlined
@@ -31,14 +31,14 @@ const LoginPage = () => {
             }
           />
         </div>
-        <hr />
+        {/*  <hr />
         <form>
           <label htmlFor="">Your Email</label>
           <input type="email" />
           <label htmlFor="">Your Password</label>
           <input type="password" />
           <Button>Login</Button>
-        </form>
+        </form> */}
       </div>
     </div>
   );

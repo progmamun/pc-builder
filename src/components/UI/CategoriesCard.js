@@ -9,15 +9,7 @@ const style = {
 
 function CategoriesCard({ product }) {
   return (
-    <Col
-      key={product.id}
-      className="gutter-row"
-      xs={24}
-      sm={12}
-      md={8}
-      lg={8}
-      xl={10}
-    >
+    <Col key={product.id} className="gutter-row" xs={24} sm={12} md={8} lg={8}>
       <Card
         style={style}
         hoverable

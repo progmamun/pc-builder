@@ -12,44 +12,37 @@ function FeaturedCategories() {
   const categories = [
     {
       title: "CPU",
-      image:
-        "https://www.cloud.ryanscomputers.com/cdn/pc-builder-components/cpu-48x48_1686724838.png",
+      image: "https://i.ibb.co/MkFmTgS/cpu.png",
       href: "/categories/cpu",
     },
     {
       title: "Motherboard",
-      image:
-        "https://www.cloud.ryanscomputers.com/cdn/pc-builder-components/2310600_1686989058.png",
+      image: "https://i.ibb.co/CzRYfd7/motherboard.png",
       href: "/categories/motherboard",
     },
     {
       title: "RAM",
-      image:
-        "https://www.cloud.ryanscomputers.com/cdn/pc-builder-components/RAM_1686989592.png",
+      image: "https://i.ibb.co/rfZjBt8/ram.png",
       href: "/categories/ram",
     },
     {
       title: "Power Supply Unit",
-      image:
-        "https://www.cloud.ryanscomputers.com/cdn/pc-builder-components/1470116_1686990072.png",
+      image: "https://i.ibb.co/GpQYHvm/power-supply.png",
       href: "/categories/powersupply",
     },
     {
       title: "Storage Device",
-      image:
-        "https://www.cloud.ryanscomputers.com/cdn/pc-builder-components/SSD-48x48_1686989668.png",
+      image: "https://i.ibb.co/YRtkcxy/storage-device.png",
       href: "/categories/storagedevice",
     },
     {
       title: "Monitor",
-      image:
-        "https://www.cloud.ryanscomputers.com/cdn/pc-builder-components/2194087-200_1686989982.png",
+      image: "https://i.ibb.co/wBdXytt/monitor.png",
       href: "/categories/monitor",
     },
     {
       title: "Others",
-      image:
-        "https://www.cloud.ryanscomputers.com/cdn/pc-builder-components/3137678_1686990169.png",
+      image: "https://i.ibb.co/4YWyyGW/others-7580275.png",
       href: "/categories/others",
     },
   ];
@@ -73,15 +66,7 @@ function FeaturedCategories() {
         }}
       >
         {categories.map((category, i) => (
-          <Col
-            key={i}
-            className="gutter-row"
-            xs={24}
-            sm={12}
-            md={8}
-            lg={8}
-            xl={10}
-          >
+          <Col key={i} className="gutter-row" xs={24} sm={12} md={8} lg={8}>
             <Link href={category?.href}>
               <Card
                 style={style}
@@ -89,10 +74,10 @@ function FeaturedCategories() {
                 cover={
                   <Image
                     src={category?.image}
-                    width={500}
+                    width={200}
                     height={200}
                     responsive
-                    alt="products image"
+                    alt={category?.title}
                   />
                 }
               >

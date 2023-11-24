@@ -95,8 +95,6 @@ const NavBar = () => {
                 sm: 32,
                 md: 38,
                 lg: 50,
-                xl: 80,
-                xxl: 100,
               }}
               src={session?.user?.image}
             />

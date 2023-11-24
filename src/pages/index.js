@@ -4,6 +4,11 @@ import FeaturedCategories from "@/components/UI/FeaturedCategories";
 import ProductCard from "@/components/UI/ProductCard";
 import Head from "next/head";
 
+const mainContainer = {
+  maxWidth: "1280px",
+  margin: "0 auto",
+};
+
 export default function HomePage({ allPc }) {
   return (
     <>
@@ -16,7 +21,7 @@ export default function HomePage({ allPc }) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main>
+      <main style={mainContainer}>
         <Banner></Banner>
         <ProductCard allPc={allPc} />
         <FeaturedCategories />

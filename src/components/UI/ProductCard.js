@@ -41,7 +41,6 @@ const ProductCard = ({ allPc }) => {
             sm={12}
             md={8}
             lg={8}
-            xl={10}
           >
             <Card
               style={style}

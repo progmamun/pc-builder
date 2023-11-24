@@ -2,23 +2,32 @@ import { Layout } from "antd";
 import NavBar from "../UI/Navbar";
 const { Header, Content, Footer } = Layout;
 
+const navContainer = {
+  width: "100%",
+  color: "white",
+  backgroundColor: "#404040",
+};
+
 function RootLayout({ children }) {
   return (
     <Layout style={{ minHeight: "100vh" }}>
-      <Header
-        style={{
-          position: "sticky",
-          top: 0,
-          zIndex: 1,
-          width: "100%",
-          display: "flex",
-          alignItems: "center",
-          color: "white",
-          backgroundColor: "#404040",
-        }}
-      >
-        <NavBar />
-      </Header>
+      <div style={navContainer}>
+        <Header
+          style={{
+            position: "sticky",
+            top: 0,
+            zIndex: 1,
+            maxWidth: "1280px",
+            margin: "0 auto",
+            display: "flex",
+            alignItems: "center",
+            color: "white",
+            backgroundColor: "#404040",
+          }}
+        >
+          <NavBar />
+        </Header>
+      </div>
       <Content
         className="site-layout"
         style={{
