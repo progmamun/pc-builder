@@ -16,44 +16,37 @@ function PcBuilderPage() {
   const categories = [
     {
       title: "CPU",
-      image:
-        "https://www.cloud.ryanscomputers.com/cdn/pc-builder-components/cpu-48x48_1686724838.png",
+      image: "https://i.ibb.co/MkFmTgS/cpu.png",
       href: "/category/cpu",
     },
     {
       title: "Motherboard",
-      image:
-        "https://www.cloud.ryanscomputers.com/cdn/pc-builder-components/2310600_1686989058.png",
+      image: "https://i.ibb.co/CzRYfd7/motherboard.png",
       href: "/category/motherboard",
     },
     {
       title: "RAM",
-      image:
-        "https://www.cloud.ryanscomputers.com/cdn/pc-builder-components/RAM_1686989592.png",
+      image: "https://i.ibb.co/rfZjBt8/ram.png",
       href: "/category/ram",
     },
     {
       title: "Power Supply",
-      image:
-        "https://www.cloud.ryanscomputers.com/cdn/pc-builder-components/1470116_1686990072.png",
+      image: "https://i.ibb.co/GpQYHvm/power-supply.png",
       href: "/category/powersupply",
     },
     {
       title: "Storage Device",
-      image:
-        "https://www.cloud.ryanscomputers.com/cdn/pc-builder-components/SSD-48x48_1686989668.png",
+      image: "https://i.ibb.co/YRtkcxy/storage-device.png",
       href: "/category/storagedevice",
     },
     {
       title: "Monitor",
-      image:
-        "https://www.cloud.ryanscomputers.com/cdn/pc-builder-components/2194087-200_1686989982.png",
+      image: "https://i.ibb.co/wBdXytt/monitor.png",
       href: "/category/monitor",
     },
     {
       title: "Others",
-      image:
-        "https://www.cloud.ryanscomputers.com/cdn/pc-builder-components/3137678_1686990169.png",
+      image: "https://i.ibb.co/4YWyyGW/others-7580275.png",
       href: "/category/others",
     },
   ];
